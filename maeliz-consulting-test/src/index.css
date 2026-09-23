@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@import "@fontsource-variable/jost";
+@import "@fontsource-variable/inter";
+
+/* Charte issue du logo : prune/rose, ambre/jaune, dégradé or. */
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Jost Variable", "Inter Variable", sans-serif;
+
+  --color-plum-950: #2a0b1c;
+  --color-plum-900: #3d1029;
+  --color-plum-800: #5c1a3e;
+  --color-plum-700: #7d2553;
+  --color-plum-600: #a03369;
+  --color-plum-500: #b6457e;
+  --color-plum-100: #f7e6ef;
+  --color-plum-50: #fcf4f8;
+
+  --color-amber-brand: #f8a51c;
+  --color-yellow-brand: #fbb116;
+
+  --color-gold-700: #8a5a24;
+  --color-gold-600: #9a6428;
+  --color-gold-500: #b3884a;
+  --color-gold-300: #e6d08a;
+  --color-gold-100: #f6ee9b;
+
+  --color-paper: #fbf8f4;
+  --color-ink: #231a20;
+  --color-muted: #6b5d66;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-gold {
+  background: linear-gradient(90deg, #9a6428 0%, #d9bf6f 45%, #f6ee9b 60%, #b3884a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Variante plus soutenue pour rester lisible sur fond clair. */
+.text-gold-dark {
+  background: linear-gradient(90deg, #8a5a24 0%, #a8803f 50%, #9a6428 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Apparition douce des sections au défilement. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
