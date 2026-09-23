@@ -27,13 +27,26 @@ export function Reveal({ children, className = "" }: { children: ReactNode; clas
   );
 }
 
-export function SectionTitle({ eyebrow, title, light = false }: { eyebrow: string; title: string; light?: boolean }) {
+type SectionTitleProps = {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  light?: boolean;
+  className?: string;
+};
+
+export function SectionTitle({ eyebrow, title, lead, light = false, className = "mb-10 md:mb-12" }: SectionTitleProps) {
   return (
-    <div className="mb-12 max-w-2xl">
-      <p className={`mb-3 text-sm font-semibold uppercase tracking-[0.2em] ${light ? "text-amber-brand" : "text-plum-600"}`}>
+    <div className={`max-w-2xl ${className}`}>
+      <p
+        className={`mb-3 text-sm font-semibold tracking-[0.16em] uppercase ${light ? "text-amber-brand" : "text-plum-600"}`}
+      >
         {eyebrow}
       </p>
-      <h2 className={`font-display text-3xl font-medium sm:text-4xl ${light ? "text-white" : "text-plum-900"}`}>{title}</h2>
+      <h2 className={`max-w-[22ch] font-display text-h2 font-medium ${light ? "text-white" : "text-plum-900"}`}>
+        {title}
+      </h2>
+      {lead && <p className={`mt-4 max-w-[60ch] text-lead ${light ? "text-white/75" : "text-muted"}`}>{lead}</p>}
     </div>
   );
 }

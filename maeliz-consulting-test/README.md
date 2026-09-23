@@ -3,6 +3,8 @@
 > Copie de `../maeliz-consulting` pour expérimenter sans toucher à la version principale.
 > Ports dédiés : `npm run dev` → http://localhost:5174 · `npm run preview` → http://localhost:4174.
 > Une fois une modification validée ici, la reporter dans `../maeliz-consulting`.
+>
+> **Audit UI/UX** : voir [`AUDIT-UI-UX.md`](AUDIT-UI-UX.md). Les corrections P0 et P1 y sont appliquées.
 
 Site one-page de Maeliz Consulting (conseil, gestion et traitement des archives).
 

@@ -19,10 +19,10 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
-        <About />
         <Services />
         <Method />
         <References />
+        <About />
         <Contact />
       </main>
       <Footer />

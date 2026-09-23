@@ -14,12 +14,38 @@ export const site = {
   phone: "",
 };
 
+/** Libellés d'action : un seul CTA principal, répété à l'identique. */
+export const cta = {
+  primary: "Échanger avec un expert",
+  secondary: "Découvrir nos expertises",
+  diagnostic: "Demander un diagnostic",
+  submit: "Envoyer ma demande",
+};
+
+export const hero = {
+  eyebrow: "Conseil, gestion et traitement des archives",
+  subtitle:
+    "Nous auditons, organisons et sécurisons vos fonds papier et numériques, de l'audit à la mise en œuvre, pour les organisations publiques et privées.",
+};
+
+/** Ordre du menu = ordre des sections dans la page. */
 export const nav = [
-  { href: "#a-propos", label: "À propos" },
-  { href: "#prestations", label: "Prestations" },
-  { href: "#methodologie", label: "Méthodologie" },
+  { href: "#prestations", label: "Expertises" },
+  { href: "#methodologie", label: "Méthode" },
   { href: "#references", label: "Références" },
+  { href: "#a-propos", label: "Le cabinet" },
   { href: "#contact", label: "Contact" },
+];
+
+/** Bandeau de confiance sous le Hero (noms seuls, sans logos : droits à obtenir). */
+export const trustedBy = [
+  "Haute Autorité de Santé",
+  "Institut de France",
+  "BNP Paribas",
+  "Crédit Agricole",
+  "L'Oréal",
+  "Cartier",
+  "ADEME",
 ];
 
 export const stats = [
@@ -30,9 +56,8 @@ export const stats = [
 ];
 
 export const about = [
-  "Maeliz Consulting accompagne les entreprises, les organisations et les collectivités dans l'optimisation de leur gestion documentaire et la sécurisation de l'information, en contextes nationaux et internationaux.",
-  "Spécialisé en conseil, records management, archivage physique et électronique, et formation, le cabinet intervient à chaque étape du cycle de vie des documents, de l'analyse des besoins à la mise en œuvre opérationnelle.",
-  "Notre approche combine méthodologie, confidentialité, rigueur opérationnelle et capacité d'adaptation aux contraintes métiers, réglementaires et calendaires propres à chaque client.",
+  "Maeliz Consulting accompagne entreprises, collectivités et institutions dans l'organisation de leurs archives et la sécurisation de leur information, en France comme à l'international.",
+  "Méthode, confidentialité et rigueur opérationnelle : chaque mission s'adapte à vos contraintes métiers, réglementaires et calendaires.",
 ];
 
 export const team = [
@@ -51,7 +76,7 @@ export const team = [
 export const partners = ["Ofis Technologies", "AGS Records Management"];
 
 export const mission = {
-  text: "Transformer la gestion documentaire en un levier de performance, en garantissant la conformité, la fiabilité et la disponibilité de l'information. Nous structurons des dispositifs pragmatiques, alignés sur vos enjeux de gouvernance, de sécurité et d'efficacité opérationnelle.",
+  text: "Faire de votre gestion documentaire un levier de performance : une information conforme, fiable et disponible, grâce à des dispositifs pragmatiques alignés sur vos enjeux de gouvernance et de sécurité.",
   goals: [
     "Sécuriser et valoriser le patrimoine informationnel et documentaire",
     "Améliorer l'accès aux documents et la fluidité des circuits d'information",
@@ -149,12 +174,15 @@ export type Reference = {
   sector: Sector;
   /** Volume traité, affiché en badge (ml = mètres linéaires). */
   volume?: string;
+  /** Mise en avant en carte détaillée ; les autres s'affichent en liste compacte. */
+  featured?: boolean;
   text: string;
 };
 
 export const references: Reference[] = [
   {
     client: "Haute Autorité de Santé (HAS)",
+    featured: true,
     period: "2025 – 2026",
     sector: "public",
     volume: "180 ml",
@@ -162,6 +190,7 @@ export const references: Reference[] = [
   },
   {
     client: "Service National d'Ingénierie Aéroportuaire",
+    featured: true,
     period: "2025 – 2026",
     sector: "public",
     volume: "240 ml",
@@ -175,6 +204,7 @@ export const references: Reference[] = [
   },
   {
     client: "SEM Plaine Commune Développement",
+    featured: true,
     period: "2023 – 2024",
     sector: "public",
     volume: "300 ml",
@@ -182,6 +212,7 @@ export const references: Reference[] = [
   },
   {
     client: "Institut de France",
+    featured: true,
     period: "2023 – 2024",
     sector: "public",
     volume: "320 ml",
@@ -195,6 +226,7 @@ export const references: Reference[] = [
   },
   {
     client: "Scouts et Guides de France",
+    featured: true,
     period: "2018 – 2021",
     sector: "private",
     volume: "600 ml",
@@ -202,6 +234,7 @@ export const references: Reference[] = [
   },
   {
     client: "Groupe BNP Paribas, Archives & Histoire",
+    featured: true,
     period: "2016 – 2020",
     sector: "private",
     volume: "3 km",
